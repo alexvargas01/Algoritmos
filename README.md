@@ -1,2 +1,2 @@
 # Algoritmos
-Algorithms
+Algorithms made through Algorithm desing class at ITESM
