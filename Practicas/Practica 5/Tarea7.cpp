@@ -2,7 +2,7 @@
 
 using namespace std;
 
-/* 
+
 int Bsearch(int arr[], int l, int r, int x)
 {
 
@@ -23,7 +23,7 @@ int Bsearch(int arr[], int l, int r, int x)
 
     return -1;
 }
- */
+
 
 int main()
 {
