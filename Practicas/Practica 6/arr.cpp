@@ -17,7 +17,7 @@ int menor(int arr[], int ini, int fin){
 }
 
 
-/* 
+
 int matr(int mat[4][4], int fi, int ff, int ci, int cf){
     int fm = (fi+ff)/2;
     int cm = (ci+cf)/2;
@@ -44,7 +44,7 @@ int matr(int mat[4][4], int fi, int ff, int ci, int cf){
     return mat[fi][ci];
     
 }
- */
+ 
 
 int main(){
 
