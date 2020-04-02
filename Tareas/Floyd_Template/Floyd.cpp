@@ -9,14 +9,13 @@ void leeArcos(int mat[100][100], int p[100][100], int m){
         p[i][i] = mat[i][i] = 0;
         for (int j=0;j<100;j++){
             mat[i][j] = mat[j][i] = INT_MAX;
-            p[i][j] = p[j][i] = 0;
+            p[i][j] = p[j][i] = -1;
         }
     }
     for (int i=1;i<=m;i++){
         cin>>a>>b>>c;
         mat[a-1][b-1] = mat[b-1][a-1] = c;
     }
-
 }
 
 void floyd(int mat[100][100], int p[100][100], int n){
@@ -30,13 +29,15 @@ void floyd(int mat[100][100], int p[100][100], int n){
                 }
             }
         }
-
     }
-
 }
 
 void checaTrayectoria(int p[100][100], int a, int b){
-
+    if (p[a][b] != -1){
+        checaTrayectoria(p,a,p[a][b]);
+        cout<< p[a][b]+1 << "-";
+        checaTrayectoria(p,p[a][b],b);
+    }
 }
 
 void consulta(int mat[100][100], int p[100][100], int q){
@@ -46,10 +47,11 @@ void consulta(int mat[100][100], int p[100][100], int q){
         if (mat[a-1][b-1] == INT_MAX){
             cout<<"no path"<<endl;
         }else{
-            cout<< mat[a-1][b-1]<<endl;
+            cout<<"Costo: "<< mat[a-1][b-1]<<" || Path: " << a <<"-";
+            checaTrayectoria(p,a-1,b-1);
+            cout<<b<<endl;
         }
     }
-
 }
 
 int main(){
