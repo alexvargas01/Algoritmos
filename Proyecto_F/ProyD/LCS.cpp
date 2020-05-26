@@ -1,3 +1,8 @@
+/*
+Nombre: Alex Jesús Vargas Castro
+Matrícula: A00824525
+*/
+
 #include <iostream>
 
 using namespace std;
@@ -45,7 +50,7 @@ int main()
         cin >> s2;
 
         //Solve and print test cases
-        cout << "case " << i << ": " << solve(s1, s2, s1.length(), s2.length()) << endl;
+        cout << "Case " << i << ": " << solve(s1, s2, s1.length(), s2.length()) << endl;
 
         i++;
         cases--;
