@@ -27,7 +27,7 @@ void leeArcos(int mat[20][20], int m){
     }
 }
 
-void tsp(int graph[20][20], vector<bool>& v, int Pos, int n, int iCont, int dist, int& ans) 
+void solve(int graph[20][20], vector<bool>& v, int Pos, int n, int iCont, int dist, int& ans) 
 { 
     if (iCont == n && graph[Pos][0]) { 
         ans = min(ans, dist + graph[Pos][0]); 
@@ -37,7 +37,7 @@ void tsp(int graph[20][20], vector<bool>& v, int Pos, int n, int iCont, int dist
     for (int i = 0; i < n; i++) { 
         if (!v[i] && graph[Pos][i]) { 
             v[i] = true; 
-            tsp(graph, v, i, n, iCont + 1, dist + graph[Pos][i], ans); 
+            solve(graph, v, i, n, iCont + 1, dist + graph[Pos][i], ans); 
             v[i] = false; 
         } 
     } 
@@ -61,7 +61,7 @@ int main()
     int ans = INT_MAX; 
   
    
-    tsp(graph, v, 0, n, 1, 0, ans); 
+    solve(graph, v, 0, n, 1, 0, ans); 
 
     if (ans == INT_MAX){
         cout<<"INF"<<endl;
